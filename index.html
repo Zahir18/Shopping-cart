@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-sm-12 col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-sm-7 col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-sm-5 col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default"><i id="MinusBtn" class="fas fa-minus "></i></button>
+                           <input id="inputValue" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="plusBtn" class="fas fa-plus Plus"></i></button>
+                        </div>
+                        <h5>$<span id="ipPrice">1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-sm-7 col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-sm-5 col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default"><i id="caseMinusBtn" class="fas fa-minus"></i></button>
+                           <input id="caseInput"  type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="casePlusBtn" class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$<span id="casePrice">50</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="subtotal">1269</span></h5>
+                        <h5>$0</h5>
+                        <h5>$<span id="total">1269</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script>
+      const iphone_value= document.getElementById("plusBtn");
+      iphone_value.addEventListener("click",function(){
+         const inpValue= document.getElementById("inputValue").value;
+         const Value= parseFloat(inpValue);
+         const clickedValue= Value+1;
+         document.getElementById("inputValue").value= clickedValue;
+
+         const iphonePrice = document.getElementById("ipPrice").innerText;
+         const iphonePrice2 = parseFloat(iphonePrice);
+         document.getElementById("ipPrice").innerText= iphonePrice2 + 1219;
+
+
+         //Subtotal Part
+         const sTotal = document.getElementById("subtotal").innerText;
+         const sTotal2 = parseFloat(sTotal);
+         document.getElementById("subtotal").innerText= 1219 + sTotal2;
+
+         //Total part
+         const Total = document.getElementById("total").innerText;
+         const Total2 = parseFloat(Total);
+         document.getElementById("total").innerText=  Total2 + 1219;
+         
+      })
+      const iphoneValue= document.getElementById("MinusBtn");
+      iphoneValue.addEventListener("click",function(){
+      const inpValue= document.getElementById("inputValue").value;
+      const Value= parseFloat(inpValue);
+      const Value2= Value-1;
+      if(Value2 >= 0){
+      document.getElementById("inputValue").value= Value2;
+      const iphonePrice = document.getElementById("ipPrice").innerText;
+      const iphonePrice2 = parseFloat(iphonePrice);
+      document.getElementById("ipPrice").innerText= iphonePrice2 - 1219 ;
+
+      //Subtotal Part.....
+      const sTotal = document.getElementById("subtotal").innerText;
+      const sTotal2 = parseFloat(sTotal);
+      document.getElementById("subtotal").innerText= sTotal2 -1219;
+
+      //Total Part
+      const Total = document.getElementById("total").innerText;
+      const Total2 = parseFloat(Total);
+      document.getElementById("total").innerText=sTotal2 - 1219;
+      
+      }
+      })
+
+
+
+      //2nd Part for Iphone Case......
+      //Starts With plus button
+      const case_value= document.getElementById("casePlusBtn");
+      case_value.addEventListener("click",function(){
+         const inpValue= document.getElementById("caseInput").value;
+         const Value= parseFloat(inpValue);
+         const clickedValue= Value+1;
+         document.getElementById("caseInput").value= clickedValue;
+
+         const iphonePrice = document.getElementById("casePrice").innerText;
+         const iphonePrice2 = parseFloat(iphonePrice);
+         document.getElementById("casePrice").innerText= iphonePrice2 + 50;
+
+
+         //Subtotal Part
+         const sTotal = document.getElementById("subtotal").innerText;
+         const sTotal2 = parseFloat(sTotal);
+         document.getElementById("subtotal").innerText= 50 + sTotal2;;
+         //Total part
+         const Total = document.getElementById("total").innerText;
+         const Total2 = parseFloat(Total);
+         document.getElementById("total").innerText= Total2 + 50;
+         
+      })
+
+     // Now for Minus Button
+     const caseValue2= document.getElementById("caseMinusBtn");
+     caseValue2.addEventListener("click",function(){
+      const inpValue= document.getElementById("caseInput").value;
+      const Value= parseFloat(inpValue);
+      const Value2= Value-1;
+      if(Value2 >= 0){
+      document.getElementById("caseInput").value= Value2;
+      const iphonePrice = document.getElementById("casePrice").innerText;
+      const iphonePrice2 = parseFloat(iphonePrice);
+      document.getElementById("casePrice").innerText= iphonePrice2 - 50 ;
+
+      //Subtotal Part.....
+      const sTotal = document.getElementById("subtotal").innerText;
+      const sTotal2 = parseFloat(sTotal);
+      document.getElementById("subtotal").innerText=sTotal2 - 50;
+
+      //Total Part
+      const Total = document.getElementById("total").innerText;
+      const Total2 = parseFloat(Total);
+      document.getElementById("total").innerText=Total2 - 50;
+      }
+      })
+
+   </script>
+</body>
+
+</html>
