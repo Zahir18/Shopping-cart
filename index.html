@@ -85,21 +85,23 @@
          const Value= parseFloat(inpValue);
          const clickedValue= Value+1;
          document.getElementById("inputValue").value= clickedValue;
-
-         const iphonePrice = document.getElementById("ipPrice").innerText;
-         const iphonePrice2 = parseFloat(iphonePrice);
-         document.getElementById("ipPrice").innerText= iphonePrice2 + 1219;
+         updateText('ipPrice',-1219);
+         // const iphonePrice = document.getElementById("ipPrice").innerText;
+         // const iphonePrice2 = parseFloat(iphonePrice);
+         // document.getElementById("ipPrice").innerText= iphonePrice2 + 1219;
 
 
          //Subtotal Part
-         const sTotal = document.getElementById("subtotal").innerText;
-         const sTotal2 = parseFloat(sTotal);
-         document.getElementById("subtotal").innerText= 1219 + sTotal2;
+         updateText('subtotal', -1219);
+         // const sTotal = document.getElementById("subtotal").innerText;
+         // const sTotal2 = parseFloat(sTotal);
+         // document.getElementById("subtotal").innerText= 1219 + sTotal2;
 
          //Total part
-         const Total = document.getElementById("total").innerText;
-         const Total2 = parseFloat(Total);
-         document.getElementById("total").innerText=  Total2 + 1219;
+         updateText('total', -1219);
+         // const Total = document.getElementById("total").innerText;
+         // const Total2 = parseFloat(Total);
+         // document.getElementById("total").innerText=  Total2 + 1219;
          
       })
       const iphoneValue= document.getElementById("MinusBtn");
@@ -109,19 +111,22 @@
       const Value2= Value-1;
       if(Value2 >= 0){
       document.getElementById("inputValue").value= Value2;
-      const iphonePrice = document.getElementById("ipPrice").innerText;
-      const iphonePrice2 = parseFloat(iphonePrice);
-      document.getElementById("ipPrice").innerText= iphonePrice2 - 1219 ;
+      updateText('ipPrice',1219);
+      // const iphonePrice = document.getElementById("ipPrice").innerText;
+      // const iphonePrice2 = parseFloat(iphonePrice);
+      // document.getElementById("ipPrice").innerText= iphonePrice2 - 1219 ;
 
       //Subtotal Part.....
-      const sTotal = document.getElementById("subtotal").innerText;
-      const sTotal2 = parseFloat(sTotal);
-      document.getElementById("subtotal").innerText= sTotal2 -1219;
+      updateText('subtotal',1219);
+      // const sTotal = document.getElementById("subtotal").innerText;
+      // const sTotal2 = parseFloat(sTotal);
+      // document.getElementById("subtotal").innerText= sTotal2 -1219;
 
       //Total Part
-      const Total = document.getElementById("total").innerText;
-      const Total2 = parseFloat(Total);
-      document.getElementById("total").innerText=sTotal2 - 1219;
+      updateText('total',1219);
+      // const Total = document.getElementById("total").innerText;
+      // const Total2 = parseFloat(Total);
+      // document.getElementById("total").innerText=sTotal2 - 1219;
       
       }
       })
@@ -136,20 +141,23 @@
          const Value= parseFloat(inpValue);
          const clickedValue= Value+1;
          document.getElementById("caseInput").value= clickedValue;
-
-         const iphonePrice = document.getElementById("casePrice").innerText;
-         const iphonePrice2 = parseFloat(iphonePrice);
-         document.getElementById("casePrice").innerText= iphonePrice2 + 50;
+         updateText('casePrice',-50);
+         // const iphonePrice = document.getElementById("casePrice").innerText;
+         // const iphonePrice2 = parseFloat(iphonePrice);
+         // document.getElementById("casePrice").innerText= iphonePrice2 + 50;
 
 
          //Subtotal Part
-         const sTotal = document.getElementById("subtotal").innerText;
-         const sTotal2 = parseFloat(sTotal);
-         document.getElementById("subtotal").innerText= 50 + sTotal2;;
+         updateText('subtotal',-50);
+         // const sTotal = document.getElementById("subtotal").innerText;
+         // const sTotal2 = parseFloat(sTotal);
+         // document.getElementById("subtotal").innerText= 50 + sTotal2;;
+
          //Total part
-         const Total = document.getElementById("total").innerText;
-         const Total2 = parseFloat(Total);
-         document.getElementById("total").innerText= Total2 + 50;
+         updateText('total',-50);
+         // const Total = document.getElementById("total").innerText;
+         // const Total2 = parseFloat(Total);
+         // document.getElementById("total").innerText= Total2 + 50;
          
       })
 
@@ -161,22 +169,30 @@
       const Value2= Value-1;
       if(Value2 >= 0){
       document.getElementById("caseInput").value= Value2;
-      const iphonePrice = document.getElementById("casePrice").innerText;
-      const iphonePrice2 = parseFloat(iphonePrice);
-      document.getElementById("casePrice").innerText= iphonePrice2 - 50 ;
+      updateText('casePrice', 50);
+      // const iphonePrice = document.getElementById("casePrice").innerText;
+      // const iphonePrice2 = parseFloat(iphonePrice);
+      // document.getElementById("casePrice").innerText= iphonePrice2 - 50 ;
 
+      updateText('subtotal',50);
       //Subtotal Part.....
-      const sTotal = document.getElementById("subtotal").innerText;
-      const sTotal2 = parseFloat(sTotal);
-      document.getElementById("subtotal").innerText=sTotal2 - 50;
+      // const sTotal = document.getElementById("subtotal").innerText;
+      // const sTotal2 = parseFloat(sTotal);
+      // document.getElementById("subtotal").innerText=sTotal2 - 50;
 
       //Total Part
-      const Total = document.getElementById("total").innerText;
-      const Total2 = parseFloat(Total);
-      document.getElementById("total").innerText=Total2 - 50;
+      // const Total = document.getElementById("total").innerText;
+      // const Total2 = parseFloat(Total);
+      // document.getElementById("total").innerText=Total2 - 50;
+      updateText('total',50);
       }
       })
 
+      function updateText(ID,productPrice) {
+      const Total = document.getElementById(ID).innerText;
+      const Total2 = parseFloat(Total);
+      document.getElementById(ID).innerText=Total2 - productPrice;
+      };
    </script>
 </body>
 
